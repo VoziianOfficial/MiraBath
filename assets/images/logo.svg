@@ -1,0 +1,123 @@
+<svg width="760" height="180" viewBox="0 0 760 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .outline {
+        stroke: #0A0A0A;
+        stroke-width: 12;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .brand-main {
+        font-family: 'Sora', 'Manrope', 'Inter', Arial, sans-serif;
+        font-size: 68px;
+        font-weight: 650;
+        letter-spacing: -2.6px;
+      }
+
+      .brand-sub {
+        font-family: 'Manrope', 'Inter', Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 3.2px;
+        text-transform: uppercase;
+      }
+    </style>
+  </defs>
+
+  <g transform="translate(24 18) scale(0.28)">
+    <path
+      d="M188 118
+         C214 103 245 104 269 121
+         C290 101 322 98 350 110
+         C387 126 411 160 410 200
+         C443 205 468 233 470 268
+         C472 309 446 344 404 354
+         C396 392 373 424 339 442
+         C304 461 264 463 229 449
+         C192 434 166 403 156 363
+         C126 358 103 335 95 305
+         C86 269 96 235 123 210
+         C111 175 122 142 148 123
+         C160 114 174 111 188 118Z"
+      fill="#DCEEEF"
+      class="outline"/>
+
+    <path
+      d="M168 165
+         C193 138 233 130 271 139
+         C246 140 219 150 199 168
+         C174 191 160 224 160 263
+         C160 327 197 385 257 411
+         C301 430 349 424 384 400
+         C370 418 352 433 330 444
+         C299 459 264 461 232 448
+         C195 432 169 403 159 364
+         C130 359 107 337 98 309
+         C87 275 94 239 118 215
+         C120 196 130 179 145 169
+         C152 164 160 161 168 165Z"
+      fill="#CFE7EC"
+      opacity="0.95"/>
+
+    <path
+      d="M252 214
+         C270 236 295 270 307 299
+         C317 324 315 348 300 367
+         C287 384 267 394 245 394
+         C223 394 203 384 190 367
+         C175 348 173 324 183 299
+         C195 270 220 236 238 214
+         C242 209 248 209 252 214Z"
+      fill="#74C7C7"
+      class="outline"/>
+
+    <path
+      d="M221 255
+         C209 274 202 293 202 313
+         C202 336 212 355 230 366
+         C215 361 203 350 196 335
+         C188 318 190 297 199 278
+         C204 268 211 259 221 255Z"
+      fill="#9BDDE0"
+      opacity="0.75"/>
+
+    <path
+      d="M163 90
+         C173 103 186 122 192 137
+         C198 150 198 162 190 173
+         C182 184 170 190 157 190
+         C144 190 132 184 124 173
+         C116 162 116 150 122 137
+         C128 122 141 103 151 90
+         C154 86 160 86 163 90Z"
+      fill="#0B5D6B"
+      class="outline"/>
+
+    <path
+      d="M145 121
+         C139 131 136 140 136 150
+         C136 159 140 167 147 172
+         C137 169 130 162 127 153
+         C123 143 126 132 132 122
+         C135 117 139 112 145 121Z"
+      fill="#74C7C7"
+      opacity="0.7"/>
+
+    <circle cx="372" cy="306" r="20" fill="#74C7C7" class="outline"/>
+    <circle cx="312" cy="206" r="11" fill="#0B5D6B" class="outline"/>
+
+    <path d="M389 164C401 180 407 198 408 218" class="outline"/>
+    <path d="M171 287C174 303 185 314 199 318" class="outline"/>
+  </g>
+
+  <text x="190" y="92" class="brand-main">
+    <tspan fill="#0A0A0A">Mira</tspan><tspan fill="#0B5D6B">Bath</tspan>
+  </text>
+
+  <text x="194" y="124" fill="#4F5B61" class="brand-sub">
+    BATHROOM PROVIDER MATCHING
+  </text>
+
+  <path d="M194 140 C270 151 374 151 456 140" stroke="#74C7C7" stroke-width="5" stroke-linecap="round"/>
+</svg>
