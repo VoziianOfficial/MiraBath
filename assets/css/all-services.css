@@ -628,3 +628,59 @@
         border-radius: 24px 30px 22px 34px;
     }
 }
+
+/* =========================
+   SERVICES OVERVIEW HEAD WIDTH FIX
+========================= */
+
+.services-overview__head {
+    grid-template-columns: minmax(420px, 0.9fr) minmax(360px, 0.8fr);
+    gap: 48px;
+    align-items: end;
+}
+
+.services-overview__head>div:first-child {
+    min-width: 0;
+    max-width: 760px;
+}
+
+.services-overview__head h2 {
+    max-width: 760px;
+}
+
+.services-overview__head>p {
+    max-width: 620px;
+    justify-self: end;
+}
+
+/* tablet */
+@media (max-width: 980px) {
+    .services-overview__head {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .services-overview__head>div:first-child,
+    .services-overview__head h2,
+    .services-overview__head>p {
+        max-width: 100%;
+        justify-self: start;
+    }
+}
+
+/* =========================
+   SERVICE SELECTOR HEAD WIDTH FIX
+========================= */
+
+.service-selector__head {
+    max-width: 980px;
+    width: 100%;
+}
+
+.service-selector__head h2 {
+    max-width: 900px;
+}
+
+.service-selector__head p {
+    max-width: 680px;
+}
