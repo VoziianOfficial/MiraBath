@@ -1339,3 +1339,35 @@
     letter-spacing: -0.08em;
     text-shadow: 0 8px 24px rgba(116, 199, 199, 0.22);
 }
+
+/* =========================
+   HOME ABOUT WIDE THIRD PHOTO
+========================= */
+
+.home-about__photo--wide {
+    grid-column: 1 / -1;
+    min-height: 270px;
+    max-height: 310px;
+}
+
+.home-about__photo--wide img {
+    object-position: center;
+}
+
+.home-about__photo--wide .home-about__photo-caption {
+    max-width: 520px;
+}
+
+@media (max-width: 980px) {
+    .home-about__photo--wide {
+        min-height: 240px;
+        max-height: 280px;
+    }
+}
+
+@media (max-width: 760px) {
+    .home-about__photo--wide {
+        min-height: 210px;
+        max-height: 240px;
+    }
+}
