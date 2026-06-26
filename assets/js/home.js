@@ -296,6 +296,70 @@
         });
     };
 
+    const initStatsCounters = () => {
+        const counters = qsa('[data-count]');
+        if (!counters.length) return;
+
+        const formatNumber = (value, target, prefix, suffix) => {
+            const number = Math.round(value);
+
+            if (prefix === '0' && target < 10) {
+                return `0${number}${suffix}`;
+            }
+
+            if (target === 100 && suffix === '%') {
+                return `${String(number).padStart(3, '0')}${suffix}`;
+            }
+
+            return `${number}${suffix}`;
+        };
+
+        const animateCounter = (element) => {
+            if (element.dataset.counted === 'true') return;
+
+            const target = Number(element.getAttribute('data-count') || 0);
+            const prefix = element.getAttribute('data-prefix') || '';
+            const suffix = element.getAttribute('data-suffix') || '';
+            const duration = 1500;
+            const startTime = performance.now();
+
+            element.dataset.counted = 'true';
+
+            const step = (currentTime) => {
+                const progress = Math.min((currentTime - startTime) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const currentValue = target * eased;
+
+                element.textContent = formatNumber(currentValue, target, prefix, suffix);
+
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    element.textContent = formatNumber(target, target, prefix, suffix);
+                }
+            };
+
+            requestAnimationFrame(step);
+        };
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+
+                    animateCounter(entry.target);
+                    obs.unobserve(entry.target);
+                });
+            }, {
+                threshold: 0.35
+            });
+
+            counters.forEach((counter) => observer.observe(counter));
+        } else {
+            counters.forEach(animateCounter);
+        }
+    };
+
     const addHomepageFaqSchema = () => {
         if (app.createFaqSchema && config.homepage?.faq) {
             app.createFaqSchema(config.homepage.faq);
@@ -308,6 +372,7 @@
         initPopularProblems();
         initFaqSwiper();
         addHomepageFaqSchema();
+        initStatsCounters();
 
         if (app.refreshIcons) {
             app.refreshIcons();
