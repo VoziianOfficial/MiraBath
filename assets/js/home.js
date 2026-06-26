@@ -268,10 +268,13 @@
 
         new window.Swiper(slider, {
             slidesPerView: 1,
+            slidesPerGroup: 1,
             spaceBetween: 16,
             speed: 700,
             grabCursor: true,
-            watchOverflow: true,
+            loop: true,
+            loopAdditionalSlides: 2,
+            watchOverflow: false,
             observer: true,
             observeParents: true,
             navigation: {
@@ -281,10 +284,12 @@
             breakpoints: {
                 681: {
                     slidesPerView: 2,
+                    slidesPerGroup: 1,
                     spaceBetween: 18
                 },
                 1180: {
                     slidesPerView: 2,
+                    slidesPerGroup: 1,
                     spaceBetween: 22
                 }
             }
