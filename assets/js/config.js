@@ -19,6 +19,19 @@ window.MiraBathConfig = {
         mapQuery: 'United States'
     },
 
+    replaceDefaults: {
+        brandName: 'MiraBath',
+        legalName: 'MiraBath Provider Matching',
+        companyId: 'MB-BATH-2026',
+        address: 'United States Service Area',
+        serviceArea: 'Independent bathroom remodelling provider matching across selected local service areas',
+        serviceAreaShort: 'Independent bathroom remodelling provider.',
+        phoneRaw: '+18885550192',
+        phoneDisplay: '(888) 555-0192',
+        email: 'support@mirabath.com',
+        supportHours: 'Mon–Fri, 8:00 AM–7:00 PM'
+    },
+
     contact: {
         phoneRaw: '+18885550192',
         phoneDisplay: '(888) 555-0192',

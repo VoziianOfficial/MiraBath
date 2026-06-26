@@ -32,6 +32,133 @@
         }, config) ?? fallback;
     };
 
+    const applyConfigEverywhere = () => {
+        const defaults = config.replaceDefaults || {};
+
+        const getConfigText = (path, fallback = '') => {
+            const value = getValue(path, fallback);
+            return String(value ?? '');
+        };
+
+        const replacementPairs = [
+            [defaults.legalName || 'MiraBath Provider Matching', getConfigText('company.legalName')],
+            [defaults.brandName || 'MiraBath', getConfigText('brand.name')],
+            [defaults.companyId || 'MB-BATH-2026', getConfigText('company.companyId')],
+            [defaults.address || 'United States Service Area', getConfigText('company.address')],
+            [
+                defaults.serviceArea || 'Independent bathroom remodelling provider matching across selected local service areas',
+                getConfigText('company.serviceArea')
+            ],
+            [
+                defaults.serviceAreaShort || 'Independent bathroom remodelling provider.',
+                getConfigText('company.serviceArea')
+            ],
+            [defaults.phoneDisplay || '(888) 555-0192', getConfigText('contact.phoneDisplay')],
+            [defaults.phoneRaw || '+18885550192', getConfigText('contact.phoneRaw')],
+            [defaults.email || 'support@mirabath.com', getConfigText('contact.email')],
+            [defaults.supportHours || 'Mon–Fri, 8:00 AM–7:00 PM', getConfigText('company.supportHours')]
+        ]
+            .filter(([from, to]) => from && to)
+            .sort((a, b) => b[0].length - a[0].length);
+
+        const replaceText = (value) => {
+            let result = String(value ?? '');
+
+            replacementPairs.forEach(([from, to]) => {
+                if (!from || from === to) return;
+                result = result.split(from).join(to);
+            });
+
+            return result;
+        };
+
+
+        qsa('[data-config]').forEach((element) => {
+            const path = element.getAttribute('data-config');
+            const value = getValue(path);
+
+            if (value === undefined || value === null || value === '') return;
+
+            element.textContent = value;
+        });
+
+  
+        qsa('a[href^="tel:"]').forEach((link) => {
+            const phoneRaw = getConfigText('contact.phoneRaw');
+
+            if (phoneRaw) {
+                link.setAttribute('href', `tel:${phoneRaw}`);
+            }
+        });
+
+    
+        qsa('a[href^="mailto:"]').forEach((link) => {
+            const email = getConfigText('contact.email');
+
+            if (email) {
+                link.setAttribute('href', `mailto:${email}`);
+            }
+        });
+
+   
+        const walker = document.createTreeWalker(
+            document.body,
+            NodeFilter.SHOW_TEXT,
+            {
+                acceptNode(node) {
+                    const parent = node.parentElement;
+
+                    if (!parent) return NodeFilter.FILTER_REJECT;
+
+                    const blockedTags = ['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEMPLATE', 'SVG'];
+
+                    if (blockedTags.includes(parent.tagName)) {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+
+                    if (!node.nodeValue || !node.nodeValue.trim()) {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            }
+        );
+
+        const textNodes = [];
+
+        while (walker.nextNode()) {
+            textNodes.push(walker.currentNode);
+        }
+
+        textNodes.forEach((node) => {
+            const updated = replaceText(node.nodeValue);
+
+            if (updated !== node.nodeValue) {
+                node.nodeValue = updated;
+            }
+        });
+
+       
+        const attributesToUpdate = ['alt', 'title', 'aria-label', 'placeholder', 'content', 'value'];
+
+        qsa('*').forEach((element) => {
+            attributesToUpdate.forEach((attr) => {
+                if (!element.hasAttribute(attr)) return;
+
+                const current = element.getAttribute(attr);
+                const updated = replaceText(current);
+
+                if (updated !== current) {
+                    element.setAttribute(attr, updated);
+                }
+            });
+        });
+
+    
+        document.title = replaceText(document.title);
+    };
+
     const normalizePath = (path) => {
         const clean = path.split('/').pop() || 'index.html';
         return clean === '' ? 'index.html' : clean;
@@ -636,6 +763,7 @@
         createHeader();
         createFooter();
         createFinalCta();
+        applyConfigEverywhere();
         injectConfigValues();
         createCookieBanner();
 
