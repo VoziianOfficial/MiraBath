@@ -497,3 +497,281 @@
         height: 46px;
     }
 }
+
+/* =========================
+   ABOUT TRUST CARDS SMOOTH HOVER V2
+   No grid jumping, only hovered card grows visually
+========================= */
+
+.about-trust__grid {
+    align-items: start;
+    overflow: visible;
+}
+
+.trust-card {
+    position: relative;
+    z-index: 1;
+    height: 138px;
+    min-height: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px 92px 24px 24px;
+    overflow: hidden;
+    border: 2px solid rgba(10, 10, 10, 0.14);
+    border-radius: 30px 38px 26px 42px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 14px 42px rgba(9, 39, 45, 0.08);
+    transform-origin: center center;
+    transition:
+        transform 420ms ease,
+        border-color 360ms ease,
+        box-shadow 360ms ease,
+        background-color 360ms ease;
+    will-change: transform;
+}
+
+.trust-card:hover {
+    z-index: 8;
+    transform: translateY(-8px) scale(1.055);
+    border-color: var(--color-seafoam);
+    background: var(--color-mist-soft);
+    box-shadow: 0 26px 70px rgba(9, 39, 45, 0.2);
+}
+
+.trust-card__icon {
+    position: absolute;
+    top: 50%;
+    right: 26px;
+    width: 48px;
+    height: 48px;
+    margin: 0 !important;
+    color: var(--color-ocean);
+    stroke-width: 1.45;
+    transform: translateY(-50%);
+    transition:
+        transform 420ms ease,
+        color 360ms ease;
+}
+
+.trust-card:hover .trust-card__icon {
+    color: var(--color-seafoam);
+    transform: translateY(-50%) rotate(-5deg) scale(1.08);
+}
+
+.trust-card h3 {
+    position: relative;
+    z-index: 2;
+    width: fit-content;
+    max-width: 260px;
+    margin: 0;
+    padding-right: 8px;
+    font-size: clamp(1.1rem, 1.45vw, 1.36rem);
+    transition: transform 420ms ease;
+}
+
+.trust-card:hover h3 {
+    transform: translateY(-22px);
+}
+
+.trust-card h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 100%;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--color-seafoam);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 360ms ease;
+}
+
+.trust-card:hover h3::after {
+    transform: scaleX(1);
+}
+
+.trust-card p {
+    position: absolute;
+    left: 24px;
+    right: 92px;
+    bottom: 22px;
+    z-index: 2;
+    max-width: 440px;
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 0.88rem;
+    line-height: 1.42;
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(2px);
+    pointer-events: none;
+    transition:
+        opacity 360ms ease 80ms,
+        transform 420ms ease 80ms,
+        filter 420ms ease 80ms;
+}
+
+.trust-card:hover p {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+/* AOS safe */
+.trust-card[data-aos] {
+    backface-visibility: hidden;
+}
+
+/* tablet: 2 columns, still no jumping */
+@media (max-width: 1100px) {
+    .about-trust__grid {
+        align-items: start;
+    }
+
+    .trust-card {
+        height: 132px;
+        padding: 22px 84px 22px 22px;
+    }
+
+    .trust-card__icon {
+        width: 42px;
+        height: 42px;
+        right: 22px;
+    }
+
+    .trust-card p {
+        left: 22px;
+        right: 84px;
+        bottom: 20px;
+    }
+
+    .trust-card:hover {
+        transform: translateY(-7px) scale(1.035);
+    }
+}
+
+/* mobile: no hover opening, text visible immediately */
+@media (max-width: 680px) {
+    .trust-card {
+        height: auto;
+        min-height: 168px !important;
+        padding: 24px 76px 24px 22px;
+        transform: none;
+    }
+
+    .trust-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .trust-card h3,
+    .trust-card:hover h3 {
+        transform: none;
+    }
+
+    .trust-card p {
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        margin-top: 14px;
+        opacity: 1;
+        transform: none;
+        filter: none;
+        pointer-events: auto;
+    }
+
+    .trust-card__icon {
+        top: 24px;
+        right: 22px;
+        transform: none;
+    }
+
+    .trust-card:hover .trust-card__icon {
+        transform: rotate(-5deg) scale(1.05);
+    }
+}
+
+/* =========================
+   TRUST CARD TEXT OVERLAP FIX
+========================= */
+
+.trust-card {
+    height: 150px;
+    display: grid;
+    align-content: center;
+    padding: 22px 88px 22px 24px;
+}
+
+.trust-card h3,
+.trust-card:hover h3 {
+    transform: none !important;
+}
+
+.trust-card p {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    max-width: 100%;
+    margin-top: 0;
+    padding-top: 0;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    filter: none;
+    transform: translateY(8px);
+    transition:
+        max-height 420ms ease,
+        opacity 320ms ease,
+        margin-top 320ms ease,
+        transform 360ms ease;
+}
+
+.trust-card:hover p {
+    max-height: 90px;
+    margin-top: 14px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* карточка увеличивается визуально, но не растягивает соседние */
+.trust-card:hover {
+    transform: translateY(-7px) scale(1.045);
+}
+
+/* чтобы длинный текст не упирался в иконку */
+.trust-card p {
+    padding-right: 4px;
+}
+
+/* tablet */
+@media (max-width: 1100px) {
+    .trust-card {
+        height: 150px;
+        padding: 22px 82px 22px 22px;
+    }
+
+    .trust-card:hover p {
+        max-height: 100px;
+    }
+}
+
+/* mobile */
+@media (max-width: 680px) {
+    .trust-card {
+        height: auto;
+        min-height: 168px !important;
+        display: block;
+        padding: 24px 76px 24px 22px;
+    }
+
+    .trust-card p,
+    .trust-card:hover p {
+        max-height: none;
+        margin-top: 14px;
+        opacity: 1;
+        transform: none;
+    }
+}
