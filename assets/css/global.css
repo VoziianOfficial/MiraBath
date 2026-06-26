@@ -1974,3 +1974,45 @@ p {
         transition-duration: 0.001ms !important;
     }
 }
+
+/* =========================
+   FIXED HEADER FIX
+   Stable sticky-style header
+========================= */
+
+[data-site-header] {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 400 !important;
+    width: 100% !important;
+    background: var(--color-white);
+}
+
+.site-topbar {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+.site-header {
+    position: relative !important;
+    top: auto !important;
+    z-index: 1 !important;
+    width: 100% !important;
+}
+
+/* чтобы первый hero/секция не залезали под фиксированный header */
+.site-main {
+    padding-top: calc(var(--preheader-height) + var(--header-height));
+}
+
+/* mobile menu должен быть выше fixed header */
+.mobile-menu {
+    z-index: 700 !important;
+}
+
+/* cookie banner тоже выше обычного контента */
+.cookie-banner {
+    z-index: 650 !important;
+}
