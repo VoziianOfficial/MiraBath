@@ -70,11 +70,62 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 34px 104px 34px 34px;
+    padding: 82px 104px 34px 34px;
     border: 2px solid rgba(10, 10, 10, 0.14);
     border-radius: 34px 42px 30px 46px;
     background: var(--color-mist-soft);
     overflow: hidden;
+}
+
+.service-overview-card__hint {
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid rgba(92, 195, 184, 0.42);
+    border-radius: 999px;
+    color: var(--color-ocean);
+    background: rgba(255, 255, 255, 0.84);
+    box-shadow: 0 8px 20px rgba(9, 39, 45, 0.08);
+    font-size: 0.73rem;
+    font-weight: 850;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    text-transform: uppercase;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.service-overview-card__hint::before {
+    content: "↕";
+    color: var(--color-seafoam);
+    font-size: 0.92rem;
+    line-height: 1;
+    animation: service-overview-hint-float 1.8s ease-in-out infinite;
+}
+
+.service-overview__swipe-guide,
+.service-overview__swipe-arrows {
+    display: none !important;
+}
+
+.service-overview__slider-wrap::after {
+    content: none !important;
+}
+
+@keyframes service-overview-hint-float {
+    0%,
+    100% {
+        transform: translateY(-1px);
+    }
+
+    50% {
+        transform: translateY(2px);
+    }
 }
 
 .service-overview-card__icon {
@@ -516,7 +567,7 @@
 
     .service-overview-card {
         min-height: 360px;
-        padding: 28px 78px 28px 24px;
+        padding: 72px 78px 28px 24px;
     }
 
     .service-overview-card__icon {
@@ -524,6 +575,18 @@
         height: 50px;
         top: 24px;
         right: 24px;
+    }
+
+    .service-overview-card__hint {
+        top: 18px;
+        left: 18px;
+        gap: 6px;
+        padding: 7px 10px;
+        font-size: 0.68rem;
+    }
+
+    .service-overview-card__hint::before {
+        font-size: 0.84rem;
     }
 
     .service-overview__pagination {
@@ -573,6 +636,11 @@
 
     .service-overview-card {
         padding-right: 66px;
+    }
+
+    .service-overview-card__hint {
+        top: 16px;
+        left: 16px;
     }
 
     .factor-card__icon {
@@ -633,4 +701,3 @@
         text-wrap: balance;
     }
 }
-
