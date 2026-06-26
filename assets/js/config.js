@@ -14,7 +14,7 @@ window.MiraBathConfig = {
         legalName: 'MiraBath Provider Matching',
         companyId: 'MB-BATH-2026',
         address: 'United States Service Area',
-        serviceArea: 'Independent bathroom remodelling provider matching across selected local service areas',
+        serviceArea: 'Independent bathroom remodelling provider.',
         supportHours: 'Mon–Fri, 8:00 AM–7:00 PM',
         mapQuery: 'United States'
     },

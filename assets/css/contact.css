@@ -543,3 +543,29 @@
         height: 24px;
     }
 }
+
+/* =========================
+   CONTACT INFO HEAD WIDTH FIX
+========================= */
+
+.contact-info__head {
+    max-width: 100%;
+    width: 100%;
+}
+
+.contact-info__head h2 {
+    max-width: 920px;
+    white-space: nowrap;
+}
+
+.contact-info__head p {
+    max-width: 760px;
+}
+
+/* чтобы на планшетах и мобилках заголовок не ломал экран */
+@media (max-width: 760px) {
+    .contact-info__head h2 {
+        white-space: normal;
+        max-width: 100%;
+    }
+}
