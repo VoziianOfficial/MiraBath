@@ -254,7 +254,7 @@
 }
 
 .project-card h2 {
-    max-width: 260px;
+    max-width: 360px;
     margin-bottom: 12px;
     font-size: clamp(1.25rem, 2vw, 1.85rem);
 }
@@ -961,3 +961,63 @@
     }
 }
 
+/* =========================
+   HOME HERO SEARCH POSITION FIX
+   AOS must not be placed on .home-hero__search-wrap
+========================= */
+
+.home-hero__search-wrap {
+    position: absolute;
+    left: 50%;
+    right: auto;
+    bottom: 34px;
+    z-index: 4;
+    width: min(calc(100% - 40px), 1080px);
+    max-width: calc(100% - 40px);
+    transform: translateX(-50%) !important;
+}
+
+.home-search {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.home-search__field,
+.home-search__actions {
+    min-width: 0;
+}
+
+.home-search__actions {
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1280px) {
+    .home-search {
+        grid-template-columns: 1fr;
+    }
+
+    .home-search__actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+    }
+
+    .home-search__actions .btn {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 760px) {
+    .home-hero__search-wrap {
+        bottom: 18px;
+        width: min(calc(100% - 24px), 1080px);
+        max-width: calc(100% - 24px);
+    }
+
+    .home-search__actions {
+        grid-template-columns: 1fr;
+    }
+}
