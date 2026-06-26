@@ -272,12 +272,14 @@
             speed: 700,
             grabCursor: true,
             watchOverflow: true,
+            observer: true,
+            observeParents: true,
             navigation: {
                 nextEl,
                 prevEl
             },
             breakpoints: {
-                760: {
+                681: {
                     slidesPerView: 2,
                     spaceBetween: 18
                 },
