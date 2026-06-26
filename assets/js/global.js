@@ -494,8 +494,25 @@
         });
     };
 
+    const setAccordionItemState = (item, button, panel, shouldOpen) => {
+        item.classList.toggle('is-open', shouldOpen);
+        button.setAttribute('aria-expanded', String(shouldOpen));
+        panel.setAttribute('aria-hidden', String(!shouldOpen));
+    };
+
     const initAccordions = (root = document) => {
-        qsa('[data-accordion]', root).forEach((accordion) => {
+        const accordions = [];
+
+        if (root instanceof Element && root.matches('[data-accordion]')) {
+            accordions.push(root);
+        }
+
+        accordions.push(...qsa('[data-accordion]', root));
+
+        accordions.forEach((accordion) => {
+            if (accordion.dataset.accordionInitialized === 'true') return;
+
+            accordion.dataset.accordionInitialized = 'true';
             const items = qsa('[data-accordion-item]', accordion);
             const allowMultiple = accordion.hasAttribute('data-accordion-multiple');
 
@@ -516,12 +533,7 @@
 
                 const shouldOpen = item.classList.contains('is-open') || index === 0;
 
-                button.setAttribute('aria-expanded', String(shouldOpen));
-                panel.setAttribute('aria-hidden', String(!shouldOpen));
-
-                if (shouldOpen) {
-                    item.classList.add('is-open');
-                }
+                setAccordionItemState(item, button, panel, shouldOpen);
 
                 button.addEventListener('click', () => {
                     const isOpen = item.classList.contains('is-open');
@@ -531,16 +543,14 @@
                             const otherButton = qs('[data-accordion-button]', otherItem);
                             const otherPanel = qs('[data-accordion-panel]', otherItem);
 
-                            otherItem.classList.remove('is-open');
-                            otherButton?.setAttribute('aria-expanded', 'false');
-                            otherPanel?.setAttribute('aria-hidden', 'true');
+                            if (!otherButton || !otherPanel) return;
+
+                            setAccordionItemState(otherItem, otherButton, otherPanel, false);
                         });
                     }
 
                     if (!isOpen || allowMultiple) {
-                        item.classList.toggle('is-open', !isOpen);
-                        button.setAttribute('aria-expanded', String(!isOpen));
-                        panel.setAttribute('aria-hidden', String(isOpen));
+                        setAccordionItemState(item, button, panel, !isOpen);
                     }
                 });
             });
