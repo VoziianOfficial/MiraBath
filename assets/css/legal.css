@@ -1,6 +1,3 @@
-/* =========================
-   LEGAL PAGES
-========================= */
 
 .legal-hero {
     position: relative;
@@ -76,9 +73,6 @@
     stroke-width: 1.6;
 }
 
-/* =========================
-   LEGAL CONTENT LAYOUT
-========================= */
 
 .legal-content {
     background: var(--color-white);
@@ -291,9 +285,6 @@
     color: var(--color-muted);
 }
 
-/* =========================
-   LEGAL CONTACT STRIP
-========================= */
 
 .legal-contact {
     background: var(--color-ocean);
@@ -365,9 +356,6 @@
     background: transparent;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 1080px) {
 

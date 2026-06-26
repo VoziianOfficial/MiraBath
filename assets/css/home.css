@@ -1,6 +1,3 @@
-/* =========================
-   HOME HERO
-========================= */
 
 .home-hero {
     position: relative;
@@ -195,9 +192,6 @@
     font-size: 0.92rem;
 }
 
-/* =========================
-   PROJECT CATEGORIES
-========================= */
 
 .project-categories {
     background: var(--color-white);
@@ -271,9 +265,6 @@
     padding: 12px 16px;
 }
 
-/* =========================
-   ABOUT INTRO
-========================= */
 
 .home-about {
     background: var(--color-white);
@@ -350,9 +341,6 @@
     font-size: 0.95rem;
 }
 
-/* =========================
-   POPULAR PROBLEMS
-========================= */
 
 .popular-problems {
     background: var(--color-mist-soft);
@@ -484,9 +472,6 @@
     transform: rotate(-5deg) translateY(-3px);
 }
 
-/* =========================
-   MATCHING WORKS
-========================= */
 
 .matching-works {
     color: var(--color-white);
@@ -584,9 +569,6 @@
     color: rgba(255, 255, 255, 0.74);
 }
 
-/* =========================
-   COMPARE PHOTO SECTION
-========================= */
 
 .compare-before {
     position: relative;
@@ -699,9 +681,6 @@
     color: rgba(255, 255, 255, 0.76);
 }
 
-/* =========================
-   HOME FAQ SWIPER
-========================= */
 
 .home-faq {
     background: var(--color-white);
@@ -781,9 +760,6 @@
     font-size: 0.98rem;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 1180px) {
     .home-search {
@@ -964,10 +940,6 @@
     }
 }
 
-/* =========================
-   HOME HERO SEARCH POSITION FIX
-   AOS must not be placed on .home-hero__search-wrap
-========================= */
 
 .home-hero__search-wrap {
     position: absolute;
@@ -1025,9 +997,6 @@
     }
 }
 
-/* =========================
-   PROJECT CATEGORIES HEIGHT FIX
-========================= */
 
 .project-categories {
     padding-top: 72px;
@@ -1090,9 +1059,6 @@
     }
 }
 
-/* =========================
-   MATCHING WORKS CARD HEIGHT FIX
-========================= */
 
 .matching-works {
     padding-top: 86px;
@@ -1142,9 +1108,6 @@
     }
 }
 
-/* =========================
-   HOME FAQ SWIPER CONTAINER FIX
-========================= */
 
 .home-faq {
     overflow: hidden;
@@ -1175,14 +1138,12 @@
     box-sizing: border-box;
 }
 
-/* desktop + tablet: 2 cards */
 @media (min-width: 681px) {
     .home-faq-card {
         min-height: 250px;
     }
 }
 
-/* mobile: 1 card */
 @media (max-width: 680px) {
     .home-faq__slider {
         padding-bottom: 26px;
@@ -1193,9 +1154,6 @@
     }
 }
 
-/* =========================
-   HOME STATS STRIP
-========================= */
 
 .home-stats-strip {
     padding: 42px 0;
@@ -1289,9 +1247,6 @@
     font-weight: 600;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 980px) {
     .home-stats-strip__grid {
@@ -1340,9 +1295,6 @@
     text-shadow: 0 8px 24px rgba(116, 199, 199, 0.22);
 }
 
-/* =========================
-   HOME ABOUT WIDE THIRD PHOTO
-========================= */
 
 .home-about__photo--wide {
     grid-column: 1 / -1;

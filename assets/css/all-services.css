@@ -1,10 +1,4 @@
-/* =========================
-   ALL SERVICES PAGE
-========================= */
 
-/* =========================
-   SERVICE CATEGORY OVERVIEW
-========================= */
 
 .services-overview {
     background: var(--color-white);
@@ -160,9 +154,6 @@
     transform: rotate(-5deg) translateY(-4px);
 }
 
-/* =========================
-   CHOOSE PROJECT TYPE
-========================= */
 
 .choose-type {
     position: relative;
@@ -257,9 +248,6 @@
     background: var(--color-ocean);
 }
 
-/* =========================
-   INTERACTIVE SELECTOR
-========================= */
 
 .service-selector {
     background: var(--color-white);
@@ -364,9 +352,6 @@
     font-size: clamp(1rem, 1.18vw, 1.1rem);
 }
 
-/* =========================
-   COMPARE PROVIDER DETAILS
-========================= */
 
 .provider-compare {
     background: var(--color-mist-soft);
@@ -469,9 +454,6 @@
     color: var(--color-ocean);
 }
 
-/* =========================
-   SERVICES FAQ
-========================= */
 
 .services-faq {
     background: var(--color-white);
@@ -503,9 +485,6 @@
     font-size: 0.94rem;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 1180px) {
     .services-overview__grid {
@@ -629,9 +608,6 @@
     }
 }
 
-/* =========================
-   SERVICES OVERVIEW HEAD WIDTH FIX
-========================= */
 
 .services-overview__head {
     grid-template-columns: minmax(420px, 0.9fr) minmax(360px, 0.8fr);
@@ -653,7 +629,6 @@
     justify-self: end;
 }
 
-/* tablet */
 @media (max-width: 980px) {
     .services-overview__head {
         grid-template-columns: 1fr;
@@ -668,9 +643,6 @@
     }
 }
 
-/* =========================
-   SERVICE SELECTOR HEAD WIDTH FIX
-========================= */
 
 .service-selector__head {
     max-width: 980px;
@@ -685,9 +657,6 @@
     max-width: 680px;
 }
 
-/* =========================
-   SERVICES EDITORIAL PAIR — HORIZONTAL WIDE VERSION
-========================= */
 
 .services-editorial-pair {
     padding-top: 82px;
@@ -721,7 +690,6 @@
     transform: translateY(-6px);
 }
 
-/* фото теперь шире и ниже */
 .service-editorial-card__photo {
     width: 100%;
     height: clamp(270px, 25vw, 340px);
@@ -746,7 +714,6 @@
     filter: saturate(1.04) contrast(1.03);
 }
 
-/* черная плашка шире, но не огромная */
 .service-editorial-card__label {
     position: relative;
     z-index: 2;
@@ -787,7 +754,6 @@
     text-transform: uppercase;
 }
 
-/* нижняя плашка тоже шире и ниже */
 .service-editorial-card__text {
     width: min(calc(100% - 70px), 360px);
     min-height: 104px;
@@ -818,7 +784,6 @@
     line-height: 1.48;
 }
 
-/* tablet: две карточки остаются на одном уровне */
 @media (max-width: 980px) {
     .services-editorial-pair {
         padding-top: 72px;
@@ -839,7 +804,6 @@
     }
 }
 
-/* mobile: одна под другой */
 @media (max-width: 680px) {
     .services-editorial-pair {
         padding-top: 60px;
@@ -867,9 +831,6 @@
     }
 }
 
-/* =========================
-   SERVICES EDITORIAL PHOTO RADIUS
-========================= */
 
 .service-editorial-card__photo {
     border-radius: 18px 22px 16px 24px;

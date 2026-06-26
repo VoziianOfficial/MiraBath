@@ -36,9 +36,6 @@
     --preheader-height: 36px;
 }
 
-/* =========================
-   RESET / BASE
-========================= */
 
 *,
 *::before,
@@ -133,9 +130,6 @@ main {
     background: var(--color-ocean);
 }
 
-/* =========================
-   ACCESSIBILITY
-========================= */
 
 .skip-link {
     position: fixed;
@@ -163,9 +157,6 @@ main {
     display: none !important;
 }
 
-/* =========================
-   TYPOGRAPHY
-========================= */
 
 h1,
 h2,
@@ -238,9 +229,6 @@ p {
     font-size: clamp(1rem, 1.25vw, 1.12rem);
 }
 
-/* =========================
-   LAYOUT
-========================= */
 
 .container,
 .container-wide {
@@ -320,9 +308,6 @@ p {
     mix-blend-mode: screen;
 }
 
-/* =========================
-   COMMON IMAGE / HOVER
-========================= */
 
 .photo-cover {
     position: relative;
@@ -374,9 +359,6 @@ p {
     background: rgba(0, 0, 0, 0.48);
 }
 
-/* =========================
-   BUTTONS / LINKS
-========================= */
 
 .btn {
     position: relative;
@@ -513,9 +495,6 @@ p {
     transform: scaleX(1);
 }
 
-/* =========================
-   CARDS BASE
-========================= */
 
 .base-card {
     position: relative;
@@ -554,9 +533,6 @@ p {
     transform: translateY(-3px) rotate(-3deg);
 }
 
-/* =========================
-   HEADER
-========================= */
 
 .site-shell {
     min-height: 100vh;
@@ -875,9 +851,6 @@ p {
     height: 23px;
 }
 
-/* =========================
-   MOBILE MENU
-========================= */
 
 .mobile-menu {
     position: fixed;
@@ -1033,9 +1006,6 @@ p {
     color: var(--color-seafoam);
 }
 
-/* =========================
-   SHARED INNER HERO
-========================= */
 
 .inner-hero {
     position: relative;
@@ -1095,9 +1065,6 @@ p {
     margin-top: 30px;
 }
 
-/* =========================
-   MARQUEE
-========================= */
 
 .icon-marquee {
     position: relative;
@@ -1167,9 +1134,6 @@ p {
     }
 }
 
-/* =========================
-   SHARED FINAL CTA
-========================= */
 
 .final-cta-section {
     background: var(--color-white);
@@ -1265,9 +1229,6 @@ p {
     margin-top: 28px;
 }
 
-/* =========================
-   FORMS BASE
-========================= */
 
 .form-grid {
     display: grid;
@@ -1396,9 +1357,6 @@ p {
     pointer-events: none !important;
 }
 
-/* =========================
-   ACCORDION BASE
-========================= */
 
 .accordion {
     display: grid;
@@ -1492,9 +1450,6 @@ p {
     padding: 0 22px 22px;
 }
 
-/* =========================
-   SWIPER BASE
-========================= */
 
 .swiper {
     width: 100%;
@@ -1541,9 +1496,6 @@ p {
     height: 20px;
 }
 
-/* =========================
-   FOOTER
-========================= */
 
 .site-footer {
     color: var(--color-white);
@@ -1652,9 +1604,6 @@ p {
     color: var(--color-seafoam);
 }
 
-/* =========================
-   COOKIE BANNER
-========================= */
 
 .cookie-banner {
     position: fixed;
@@ -1707,9 +1656,6 @@ p {
     padding: 12px 16px;
 }
 
-/* =========================
-   UTILITY
-========================= */
 
 .desktop-only {
     display: initial;
@@ -1731,9 +1677,6 @@ p {
     border: 0 !important;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 1180px) {
     :root {
@@ -1975,10 +1918,6 @@ p {
     }
 }
 
-/* =========================
-   FIXED HEADER FIX
-   Stable sticky-style header
-========================= */
 
 [data-site-header] {
     position: fixed !important;
@@ -2002,17 +1941,14 @@ p {
     width: 100% !important;
 }
 
-/* чтобы первый hero/секция не залезали под фиксированный header */
 .site-main {
     padding-top: calc(var(--preheader-height) + var(--header-height));
 }
 
-/* mobile menu должен быть выше fixed header */
 .mobile-menu {
     z-index: 700 !important;
 }
 
-/* cookie banner тоже выше обычного контента */
 .cookie-banner {
     z-index: 650 !important;
 }

@@ -1,10 +1,4 @@
-/* =========================
-   SERVICE DETAIL PAGES
-========================= */
 
-/* =========================
-   SERVICE MARQUEE
-========================= */
 
 .service-title-marquee {
     color: var(--color-white);
@@ -19,9 +13,6 @@
     padding-bottom: 22px;
 }
 
-/* =========================
-   SERVICE OVERVIEW SWIPER
-========================= */
 
 .service-overview {
     background: var(--color-white);
@@ -196,9 +187,6 @@
     background: var(--color-ocean);
 }
 
-/* =========================
-   FACTORS / OPTIONS
-========================= */
 
 .service-factors {
     background: var(--color-mist-soft);
@@ -314,9 +302,6 @@
     font-size: 0.96rem;
 }
 
-/* =========================
-   MATCHING PROCESS
-========================= */
 
 .service-process {
     background: var(--color-white);
@@ -435,9 +420,6 @@
     color: var(--color-ocean);
 }
 
-/* =========================
-   SERVICE FAQ
-========================= */
 
 .service-faq {
     background: var(--color-mist-soft);
@@ -469,9 +451,6 @@
     font-size: 0.94rem;
 }
 
-/* =========================
-   SERVICE PAGE CONTENT VARIANTS
-========================= */
 
 .service-theme-note {
     display: inline-flex;
@@ -494,9 +473,6 @@
     height: 18px;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 1100px) {
 
@@ -654,9 +630,6 @@
     }
 }
 
-/* =========================
-   SERVICE OVERVIEW HEAD WIDTH FIX
-========================= */
 
 .service-overview__head {
     grid-template-columns: minmax(620px, 0.95fr) minmax(340px, 0.65fr);
@@ -679,7 +652,6 @@
     justify-self: end;
 }
 
-/* tablet */
 @media (max-width: 1080px) {
     .service-overview__head {
         grid-template-columns: 1fr;
@@ -694,7 +666,6 @@
     }
 }
 
-/* mobile */
 @media (max-width: 680px) {
     .service-overview__head h2 {
         max-width: 100%;
@@ -703,9 +674,6 @@
 }
 
 
-/* =========================
-   SERVICE PHOTO NOTE
-========================= */
 
 .service-photo-note {
     position: relative;
@@ -731,7 +699,6 @@
     object-position: center;
 }
 
-/* мягкий затемняющий слой поверх фото */
 .service-photo-note__bg::after {
     content: "";
     position: absolute;
@@ -774,12 +741,10 @@
     margin-bottom: 14px;
 }
 
-/* вариант, если хочешь плашку справа */
 .service-photo-note--right .service-photo-note__panel {
     margin-left: auto;
 }
 
-/* mobile */
 @media (max-width: 760px) {
     .service-photo-note {
         min-height: auto;

@@ -1,10 +1,4 @@
-/* =========================
-   ABOUT PAGE
-========================= */
 
-/* =========================
-   MISSION SPLIT
-========================= */
 
 .about-mission {
     background: var(--color-white);
@@ -60,9 +54,6 @@
     margin-top: 28px;
 }
 
-/* =========================
-   HELPS HOMEOWNERS
-========================= */
 
 .about-helps {
     background: var(--color-white);
@@ -181,9 +172,6 @@
     color: rgba(255, 255, 255, 0.75);
 }
 
-/* =========================
-   WHY COMPARE SWIPER
-========================= */
 
 .about-compare {
     background: var(--color-mist-soft);
@@ -251,9 +239,6 @@
     stroke-width: 1.25;
 }
 
-/* =========================
-   TRUST CARDS
-========================= */
 
 .about-trust {
     background: var(--color-white);
@@ -351,9 +336,6 @@
     transform: translateY(0);
 }
 
-/* =========================
-   ABOUT FAQ
-========================= */
 
 .about-faq {
     background: var(--color-mist-soft);
@@ -389,9 +371,6 @@
     background: rgba(255, 255, 255, 0.9);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 1100px) {
     .about-helps__grid {
@@ -498,10 +477,6 @@
     }
 }
 
-/* =========================
-   ABOUT TRUST CARDS SMOOTH HOVER V2
-   No grid jumping, only hovered card grows visually
-========================= */
 
 .about-trust__grid {
     align-items: start;
@@ -619,12 +594,10 @@
     filter: blur(0);
 }
 
-/* AOS safe */
 .trust-card[data-aos] {
     backface-visibility: hidden;
 }
 
-/* tablet: 2 columns, still no jumping */
 @media (max-width: 1100px) {
     .about-trust__grid {
         align-items: start;
@@ -652,7 +625,6 @@
     }
 }
 
-/* mobile: no hover opening, text visible immediately */
 @media (max-width: 680px) {
     .trust-card {
         height: auto;
@@ -693,9 +665,6 @@
     }
 }
 
-/* =========================
-   TRUST CARD TEXT OVERLAP FIX
-========================= */
 
 .trust-card {
     height: 150px;
@@ -736,17 +705,14 @@
     transform: translateY(0);
 }
 
-/* карточка увеличивается визуально, но не растягивает соседние */
 .trust-card:hover {
     transform: translateY(-7px) scale(1.045);
 }
 
-/* чтобы длинный текст не упирался в иконку */
 .trust-card p {
     padding-right: 4px;
 }
 
-/* tablet */
 @media (max-width: 1100px) {
     .trust-card {
         height: 150px;
@@ -758,7 +724,6 @@
     }
 }
 
-/* mobile */
 @media (max-width: 680px) {
     .trust-card {
         height: auto;
@@ -776,9 +741,6 @@
     }
 }
 
-/* =========================
-   ABOUT PROVIDER STRIP
-========================= */
 
 .about-provider-strip {
     position: relative;
@@ -821,7 +783,6 @@
     object-position: center;
 }
 
-/* нижняя строка без карточек */
 .about-provider-strip__row {
     margin-top: 28px;
     display: grid;
@@ -874,7 +835,6 @@
     line-height: 1.45;
 }
 
-/* tablet */
 @media (max-width: 980px) {
     .about-provider-strip {
         padding: 72px 0 66px;
@@ -898,7 +858,6 @@
     }
 }
 
-/* mobile */
 @media (max-width: 640px) {
     .about-provider-strip {
         padding: 58px 0;
